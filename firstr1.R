@@ -1,4 +1,14 @@
-print(1+1)
-print("hello world this is r1")
-print("yes its me again now")
-print(1+1)
+
+weightmedian <- function(directory, day)
+{
+  dat <- data.frame()
+  files <- list.files(directory, full.names=TRUE)
+  
+  for(i in 1:5)
+  {dat <- rbind(dat,read.csv(files[i]))}
+  
+  newday <- dat[which(dat[,"Day"]==day),]
+  median(newday[,"Weight"], na.rm=TRUE)
+  
+}
+ x=5
